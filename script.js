@@ -9,7 +9,7 @@ function randomRGB() {
 return `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
 }
 
-function luminance(htmlElement){
+function brightness(htmlElement){
     const colour = htmlElement.style.backgroundColor;
     const rgbValues = colour.match(/\d+/g);
 
@@ -21,15 +21,14 @@ function luminance(htmlElement){
     g = g/255;
     b = b/255;
     
-    const luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+    const brightnessVal = 0.2126 * r + 0.7152 * g + 0.0722 * b;
 
-    if (luminance > 0.5){
+    if (brightnessVal > 0.5){
         htmlElement.style.color = "#213555"; 
     }
     else{
         htmlElement.style.color = "#F8FAFC";
     }
-
 }
 
 function changeColour(){
@@ -37,7 +36,7 @@ function changeColour(){
         span.style.color = randomRGB();
     }
     colourBtn.style.backgroundColor = randomRGB();
-    luminance(colourBtn);
+    brightness(colourBtn);
 }
 
 colourBtn.addEventListener('click', changeColour);
