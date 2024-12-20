@@ -1,7 +1,9 @@
 body {
     background-color: #F8FAFC;
     color:#213555;
-    font-family: "Markazi Text", serif;
+    font-family: "Roboto", serif;
+    font-weight: 500;
+    font-style: normal;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,53 +31,38 @@ body {
 
 
 button{  
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-weight: bold;
     position: fixed;
     top:10px;
     left:20px;
     padding: 0.5em;
-    border-radius: 0.5em;
-    animation: oscillate;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
+    border-radius: 0.4em;
+    transition: all 0.1s ease;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translate(2px, 2px); 
+    box-shadow: 0 2px rgba(0, 0, 0, 0.2); 
 }
 
 label {
     display: inline-block;
 }
 
-@keyframes oscillate {
-    0% {
-        border-color: #FF0000;
-    }
-    12.5% {
-        border-color: #FF3F00;
-    }
-
-    25% {
-        border-color: #FF7F00;
-    }
-    37.5% {
-        border-color: #FFFF00;
-    }
-    62.5% {
-        border-color: #00FF00;
-    }
-    75% {
-        border-color: #0000FF;
-    }
-    87.5%{
-        border-color: #4B0082;
-
-    }
-    100%{
-        border-color:#8A2BE2;
-
-    }
-}
-
 @media (max-width: 840px){
     button{
         display: none;
     }
+
+}
+
+@media (max-width: 620px){
+    .content {
+        max-width: 70%;
+        font-size: 1.2em;
+    }
+    
 }
 
